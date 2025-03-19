@@ -1,3 +1,4 @@
+@if (!isForgotPasswordPage() && !isVerificationForgotPasswordPage()) {
 <!-- Navbar -->
 <nav class="navbar custom-navbar">
   <div class="container-fluid">
@@ -8,22 +9,34 @@
 
     <!-- Home (Centered) -->
     <div class="navbar-center">
-      <a class="nav-link active" href="#">Home</a>
+      <a class="nav-link active" routerLink="/home">Home</a>
     </div>
 
     <!-- Profile Icon (Right) -->
     <button class="btn text-white">
-      <img src="/images/profile-circle-svgrepo-com.png" alt="Profile" class="profile-icon">
+      <img
+        src="/images/profile-circle-svgrepo-com.png"
+        alt="Profile"
+        class="profile-icon"
+      />
     </button>
   </div>
 </nav>
 
 <div class="background-container">
-  <img src="/images/ibu-pejabat-imigresen-malaysia.jpg" alt="Pejabat Imigresen" class="background-image">
+  <img
+    src="/images/ibu-pejabat-imigresen-malaysia.jpg"
+    alt="Pejabat Imigresen"
+    class="background-image"
+  />
 
   <!-- Overlay Content in a Row -->
   <div class="overlay-content">
-    <img src="/images/download-removebg-preview (1).png" alt="JATA icon" class="jata-icon">
+    <img
+      src="/images/download-removebg-preview (1).png"
+      alt="JATA icon"
+      class="jata-icon"
+    />
     <div class="vertical-line"></div>
     <div class="text-content">
       <p class="portal-text">Official Portal</p>
@@ -32,4 +45,5 @@
     </div>
   </div>
 </div>
-
+}
+<router-outlet></router-outlet>
