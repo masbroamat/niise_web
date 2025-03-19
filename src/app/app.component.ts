@@ -1,12 +1,32 @@
+import { CommonModule } from '@angular/common'; // ✅ Import CommonModule
 import { Component } from '@angular/core';
-import { RouterLink, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink],
+  standalone: true, // ✅ Standalone Component
+  imports: [CommonModule], // ✅ Import CommonModule to fix ngClass error
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css',
+  styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'niise_web';
+  title(title: any) {
+    throw new Error('Method not implemented.');
+  }
+  isSidebarOpen = false;
+  
+  // Fix: Define dropdowns with an index signature
+  dropdowns: { [key: string]: boolean } = {
+    quickAccess: false,
+    latestNews: false
+  };
+
+  toggleSidebar() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+  }
+
+  toggleDropdown(section: string) {
+    if (this.dropdowns.hasOwnProperty(section)) {
+      this.dropdowns[section] = !this.dropdowns[section];
+    }
+  }
 }

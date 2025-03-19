@@ -1,31 +1,35 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+<!-- Navbar -->
+<nav class="navbar custom-navbar">
   <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mynavbar"
-    >
-      <span class="navbar-toggler-icon"></span>
+    <!-- Burger Icon (Left) -->
+    <button class="btn text-white" type="button" (click)="toggleSidebar()">
+      ☰
     </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'profile'">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'settings'">Settings</a>
-        </li>
-      </ul>
-      <!-- <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search" />
-        <button class="btn btn-primary" type="button">Search</button>
-      </form> -->
+
+    <!-- Home (Centered) -->
+    <div class="navbar-center">
+      <a class="nav-link active" href="#">Home</a>
     </div>
+
+    <!-- Profile Icon (Right) -->
+    <button class="btn text-white">
+      <img src="/images/profile-circle-svgrepo-com.png" alt="Profile" class="profile-icon">
+    </button>
   </div>
 </nav>
-<router-outlet></router-outlet>
+
+<div class="background-container">
+  <img src="/images/ibu-pejabat-imigresen-malaysia.jpg" alt="Pejabat Imigresen" class="background-image">
+
+  <!-- Overlay Content in a Row -->
+  <div class="overlay-content">
+    <img src="/images/download-removebg-preview (1).png" alt="JATA icon" class="jata-icon">
+    <div class="vertical-line"></div>
+    <div class="text-content">
+      <p class="portal-text">Official Portal</p>
+      <h2 class="nii-text">National Integrated Immigration Systems (NIISe)</h2>
+      <p class="portal-text">Ministry of Home Affairs</p>
+    </div>
+  </div>
+</div>
+
