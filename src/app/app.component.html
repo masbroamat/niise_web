@@ -23,20 +23,40 @@
   </div>
 </nav>
 
-<div class="background-container">
-  <img
-    src="/images/ibu-pejabat-imigresen-malaysia.jpg"
-    alt="Pejabat Imigresen"
-    class="background-image"
-  />
+<!-- Sidebar -->
+<div class="sidebar" [ngClass]="{'show-sidebar': isSidebarOpen}">
+  <button class="close-btn" (click)="toggleSidebar()">✖</button>
 
-  <!-- Overlay Content in a Row -->
+  <ul class="list-unstyled">
+    <li>
+      <a href="#" (click)="$event.preventDefault(); toggleDropdown('quickAccess')">Quick Access ▾</a>
+      <ul *ngIf="dropdowns['quickAccess']">
+        <li><a href="#">E-Pass</a></li>
+        <li><a href="#">Digital Landing Card (DLC)</a></li>
+        <li><a href="#">Custom Declaration</a></li>
+        <li><a href="#">SSPI</a></li>
+        <li><a href="#">MyBorder Pass</a></li>
+      </ul>
+    </li>
+    <li><a href="#">Settings</a></li>
+    <li>
+      <a href="#" (click)="$event.preventDefault(); toggleDropdown('latestNews')">Latest News ▾</a>
+      <ul *ngIf="dropdowns['latestNews']">
+        <li><a href="#">Lorem Ipsum</a></li>
+        <li><a href="#">Lorem Ipsum</a></li>
+        <li><a href="#">Lorem Ipsum</a></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<div class="overlay" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
+
+<!-- Background Image with Overlay Content -->
+<div class="background-container">
+  <img src="/images/ibu-pejabat-imigresen-malaysia.jpg" alt="Pejabat Imigresen" class="background-image" />
   <div class="overlay-content">
-    <img
-      src="/images/download-removebg-preview (1).png"
-      alt="JATA icon"
-      class="jata-icon"
-    />
+    <img src="/images/download-removebg-preview (1).png" alt="JATA icon" class="jata-icon" />
     <div class="vertical-line"></div>
     <div class="text-content">
       <p class="portal-text">Official Portal</p>

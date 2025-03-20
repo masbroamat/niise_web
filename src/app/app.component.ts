@@ -28,9 +28,7 @@ export class AppComponent {
   }
 
   toggleDropdown(section: string) {
-    if (this.dropdowns.hasOwnProperty(section)) {
       this.dropdowns[section] = !this.dropdowns[section];
-    }
   }
 
   isForgotPasswordPage(): boolean {
