@@ -14,7 +14,7 @@ import { VerificationForgotPasswordComponent } from './components/verification-f
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'dataBinding',
+    redirectTo: 'home',
     pathMatch: 'full',
   },
   {

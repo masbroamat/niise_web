@@ -1,0 +1,178 @@
+.container {
+    width: 100vw; /* Full width */
+    max-width: 100%; /* Ensure it does not exceed the viewport */
+    margin: 0; /* Remove any automatic margins */
+    padding: 0; /* Remove any padding */
+
+  }
+  
+.container h1 {
+    font-family: 'ramabhadra';
+    font-weight: bold;
+  }
+  
+  .tabs {
+    background-color: #1976D2;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .tab {
+    background: none;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .tab.active {
+    font-weight: bold;
+    text-decoration: unset;
+  }
+  
+  /* .content {
+
+
+    width: 100%;
+    min-height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+  }
+
+  .background-wrapper{
+    background-image: url("/images/Putrajaya_Malaysia_Ministry-of-Home-Affairs.jpg");
+    width: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    filter: blur(1px);
+  } */
+
+  .content {
+    position: relative;
+    display: flex;
+    align-items: center;
+    /* Background image applied directly to .content */
+    background-image: url("/images/Putrajaya_Malaysia_Ministry-of-Home-Affairs.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    gap: 50px;
+    width: 100%;
+    min-height: 100vh; /* Ensures full viewport height */
+    padding: 20px;
+    min-width: 1200px;
+}
+
+/* Add a semi-transparent white layer to improve readability */
+.content::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.6); /* Adjust transparency */
+    z-index: 0;
+}
+
+/* Ensure content appears above the background */
+.info-section, .image-section {
+    position: relative;
+    z-index: 1;
+}
+  
+  .content .info-section {
+    flex: 1;
+  }
+  
+  .card {
+    background: #ffffff;
+    padding: 5px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    margin-right: 20px auto;
+
+  }
+  
+  .card-row {
+    display: flex;
+    justify-content: space-between; /* Pushes items apart */
+    align-items: center;
+    margin-top: 8px;
+}
+
+/* Optional: Adjust text alignment */
+.card-row p {
+    margin: 0; /* Remove default spacing */
+    font-size: 14px; /* Adjust size if needed */
+}
+
+  .menu-btn {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .declaration-btn {
+    width: 100%;
+    background: black;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .image-section {
+    position: relative; /* Needed for absolute positioning */
+    text-align: center;
+    flex: 1;
+    max-width: 100%;
+}
+
+.image-section img {
+    width: 100%;
+    height: 600px;
+    display: block;
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+/* Styling for overlay text */
+.image-text {
+    position: absolute;
+    bottom: 10%; /* Moves text up from the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers text horizontally */
+    color: white;
+    width: 60%; /* Adjust width of text box */
+}
+
+/* Style heading */
+.image-text h3 {
+    font-family: 'Dancing Script';
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Style paragraph */
+.image-text p {
+    font-family: 'Open Sans';
+    font-size: 14px;
+    margin: 5px 0 0;
+}
+
+.content .white-background{
+  background-color: white;
+  width: 90vw;
+  display: flex;
+  gap: 50px;
+  padding: 30px;
+  margin: 0 auto;
+}

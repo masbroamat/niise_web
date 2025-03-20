@@ -1,31 +1,128 @@
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="javascript:void(0)">Logo</a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#mynavbar"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="mynavbar">
-      <ul class="navbar-nav me-auto">
-        <li class="nav-item">
-          <a class="nav-link active" routerLink="home">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'profile'">Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" [routerLink]="'settings'">Settings</a>
-        </li>
-      </ul>
-      <!-- <form class="d-flex">
-        <input class="form-control me-2" type="text" placeholder="Search" />
-        <button class="btn btn-primary" type="button">Search</button>
-      </form> -->
+@if (!isForgotPasswordPage() && !isVerificationForgotPasswordPage()) {
+<header>
+  <!-- Navbar -->
+  <nav class="navbar custom-navbar">
+    <div class="container-fluid">
+      <!-- Burger Icon (Left) -->
+      <button class="btn text-white" type="button" (click)="toggleSidebar()">
+        ☰
+      </button>
+
+      <!-- Home (Centered) -->
+      <div class="navbar-center">
+        <a class="nav-link active" routerLink="/home">Home</a>
+      </div>
+
+      <!-- Profile Icon (Right) -->
+      <button class="btn text-white">
+        <img
+          src="/icons/profile-circle-svgrepo-com.png"
+          alt="Profile"
+          class="profile-icon"
+        />
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar -->
+  <div class="sidebar" [ngClass]="{'show-sidebar': isSidebarOpen}">
+    <button class="close-btn" (click)="toggleSidebar()">✖</button>
+
+    <ul class="list-unstyled">
+      <li>
+        <a href="#" (click)="$event.preventDefault(); toggleDropdown('quickAccess')">Quick Access ▾</a>
+        <ul *ngIf="dropdowns['quickAccess']">
+          <li><a href="#">E-Pass</a></li>
+          <li><a href="#" routerLink="/dlc">Digital Landing Card (DLC)</a></li>
+          <li><a href="#">Custom Declaration</a></li>
+          <li><a href="#">SSPI</a></li>
+          <li><a href="#">MyBorder Pass</a></li>
+        </ul>
+      </li>
+      <li><a href="#">Settings</a></li>
+      <li>
+        <a href="#" (click)="$event.preventDefault(); toggleDropdown('latestNews')">Latest News ▾</a>
+        <ul *ngIf="dropdowns['latestNews']">
+          <li><a href="#">Lorem Ipsum</a></li>
+          <li><a href="#">Lorem Ipsum</a></li>
+          <li><a href="#">Lorem Ipsum</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <div class="overlay" *ngIf="isSidebarOpen" (click)="toggleSidebar()"></div>
+
+  <!-- Background Image with Overlay Content -->
+  <div class="background-container">
+    <img src="/images/ibu-pejabat-imigresen-malaysia.jpg" alt="Pejabat Imigresen" class="background-image" />
+    <div class="overlay-content">
+      <img src="/images/Jata.png" alt="JATA icon" class="jata-icon" />
+      <div class="vertical-line"></div>
+      <div class="text-content">
+        <p class="portal-text">Official Portal</p>
+        <h2 class="nii-text">National Integrated Immigration Systems (NIISe)</h2>
+        <p class="portal-text">Ministry of Home Affairs</p>
+      </div>
     </div>
   </div>
-</nav>
-<router-outlet></router-outlet>
+</header>
+}
+<div class="main-container">
+  <router-outlet></router-outlet>
+</div>
+
+@if (!isForgotPasswordPage() && !isVerificationForgotPasswordPage()) {
+<footer class="footer">
+  <div class="top-footer">
+    <img src="/images/qr.png" alt="" class="qr-image" height="100px">
+    <div class="updown">
+      <h5>
+        Ibu Pejabat Jabatan Imigresen Malaysia (Kementerian Dalam 
+        Negeri)
+      </h5>
+      <p>
+        No. 15, Tingkat 1-7, (Podium)Persiaran Perdana, Presint 2,62550 Putrajaya.T : 03-8000 8000 (MyGCC)
+      </p>
+    </div>
+    <h5>
+      Hakcipta © 2021 | Jabatan Imigresen Malaysia 
+      (Kementerian Dalam Negeri) Paparan terbaik 
+      menggunakan pelayar terkini: Mozilla Firefox 4, 
+      Google Chrome atau Internet Explorer 10.0 ke atas, 
+      dengan resolusi melebihi 1024 x 768
+    </h5>
+  </div>
+  <div class="horizontal-line"></div>
+  <div class="bot-footer">
+    <div class="email">
+      <p>Maklumbalas Portal</p>
+    <a href="webmaster@imi.gov.my">webmaster&#64;imi.gov.my</a>
+    </div>
+    <div class="laman">
+      <p>Laman Sosial</p>
+      <div class="sosial">
+
+      <img src="/images/Facebook.png" alt="Facebook icon" height="50px">
+      <img src="/images/Instagram.jpg" alt="Instagram Icon" height="50px">
+      <img src="/images/Twitter.png" alt="Twitter Icon" height="50px">
+      <img src="/images/Youtube.jpg" alt="Twitter icon" height="50px">
+    </div>
+      <!-- <ul>
+        <li>
+          <img src="/images/Facebook.png" alt="Facebook icon" height="50px">
+        </li>
+        <li>
+          <img src="/images/Instagram.jpg" alt="Instagram Icon">
+        </li>
+        <li>
+          <img src="/images/Twitter.png" alt="Twitter Icon">
+        </li>
+        <li>
+          <img src="/images/Youtube.jpg" alt="Twitter icon">
+        </li>
+      </ul> -->
+    </div>
+  </div>
+</footer>
+}

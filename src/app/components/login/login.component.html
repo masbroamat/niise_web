@@ -1,5 +1,82 @@
-<p>login works!</p>
-<h1>Login Page</h1>
-<p class="text-welcome">Hi, from Login component</p>
+<div class="login-container">
+  <div class="box">
+  <div class="login-box">
+    <div class="language-toggle">
+      <span>🌐 ENG</span>
+      <label class="switch">
+        <input type="checkbox">
+        <span class="slider"></span>
+      </label>
+    </div>
 
-<button class="btn btn-primary" routerLink="/home">Navigate to Home</button>
+    <div class="logo-container">
+      <img class="logo" src="/images/logo.png" alt="Logo">
+      <h2>National Integrated Immigration System</h2>
+    </div>
+
+    <form [formGroup]="loginForm" (ngSubmit)="login()" class="form-container">
+
+      <div class="tab-container">
+        <button class="tab" [class.active]="selectedTab === 'malaysian'" (click)="setTab('malaysian')">
+          Malaysia Citizen
+        </button>
+        <button class="tab" [class.active]="selectedTab === 'non-malaysian'" (click)="setTab('non-malaysian')">
+          Non-Malaysian
+        </button>
+      </div>
+      
+      <div *ngIf="selectedTab === 'malaysian'" class="form-box">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="input-group">
+            <span class="icon">👤</span>
+            <input type="text" formControlName="ic" placeholder="Enter Identification Card" required />
+          </div>
+          <div class="input-group">
+            <span class="icon">🔒</span>
+            <input type="password" formControlName="password" placeholder="Enter Password" required />
+          </div>
+          <button type="submit" class="login-button">Log In</button>
+        </form>
+      </div>
+      
+      <div *ngIf="selectedTab === 'non-malaysian'" class="form-box">
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+          <div class="input-group">
+            <span class="icon">📄</span>
+            <input type="text" formControlName="passport" placeholder="Enter Passport Number" required />
+          </div>
+          <div class="input-group">
+            <span class="icon">🔒</span>
+            <input type="password" formControlName="password" placeholder="Enter Password" required />
+          </div>
+          <button type="submit" class="login-button">Log In</button>
+          
+        </form>
+        
+      </div>
+      
+      <div class="forgot-password">
+        <a href="#">Forgot Password?</a>
+      </div>
+          </form>
+    
+<div class="line-container">
+  <div class="line"></div>
+  <span>Or Login with</span>
+  <div class="line"></div>
+</div>
+
+      <div class="login-options">
+        <button type="button" class="login-alt">MyDigital ID</button>
+        <button type="button" class="login-alt">Biometric</button>
+      </div>
+    
+  </div>
+
+  <div class="illustration">
+    <h2>USER LOGIN</h2>
+    <div class="line"></div>
+    <img src="/images/login.jpg" alt="Login Illustration">
+  </div>
+</div>
+
