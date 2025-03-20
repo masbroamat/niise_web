@@ -33,7 +33,7 @@
         <a href="#" (click)="$event.preventDefault(); toggleDropdown('quickAccess')">Quick Access ▾</a>
         <ul *ngIf="dropdowns['quickAccess']">
           <li><a href="#">E-Pass</a></li>
-          <li><a href="#">Digital Landing Card (DLC)</a></li>
+          <li><a href="#" routerLink="/dlc">Digital Landing Card (DLC)</a></li>
           <li><a href="#">Custom Declaration</a></li>
           <li><a href="#">SSPI</a></li>
           <li><a href="#">MyBorder Pass</a></li>
