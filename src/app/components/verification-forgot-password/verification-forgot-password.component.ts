@@ -12,6 +12,7 @@ export class VerificationForgotPasswordComponent {
   email: string | null = null;
   phone: number | null = null;
   inputOTPs: any;
+  isResent: boolean = false;
 
   constructor(private router: Router) {
     const navigation = this.router.getCurrentNavigation();
@@ -34,6 +35,9 @@ export class VerificationForgotPasswordComponent {
         .map((val) => (val != null ? val.toString() : ''))
         .join('');
       console.log('OTP is:', otp);
+      this.router.navigate(['/setnewpassword'], {
+        state: { otp },
+      });
       // Proceed with further OTP verification...
     }
   }
@@ -43,5 +47,12 @@ export class VerificationForgotPasswordComponent {
     if (input.value && input.value.toString().length > 1) {
       input.value = input.value.toString().slice(0, 1);
     }
+  }
+
+  notificationLabel() {
+    this.isResent = true;
+    setTimeout(() => {
+      this.isResent = false;
+    }, 2000);
   }
 }
