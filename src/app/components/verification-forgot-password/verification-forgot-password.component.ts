@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-verification-forgot-password',
-  imports: [RouterLink, FormsModule],
+  imports: [ FormsModule],
   templateUrl: './verification-forgot-password.component.html',
   styleUrl: './verification-forgot-password.component.css',
 })
