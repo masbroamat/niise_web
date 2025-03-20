@@ -3,8 +3,8 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-settings',
-  imports: [RouterLink],
+  imports: [],
   templateUrl: './settings.component.html',
   styleUrl: './settings.component.css',
 })
-export class SettingsComponent {}
+export class ForgotPasswordComponent {}
