@@ -107,6 +107,27 @@
     border-radius: 8px;
     height: 200px;
   }
+
+  .access-card {
+    width: 200px;
+    text-align: center;
+    position: relative;
+    border: #2A6A94 2px solid;
+    border-radius: 10px;
+    text-decoration: none; /* Remove default link styles */
+    color: inherit;
+}
+
+.access-card:hover {
+    background-color: rgba(42, 106, 148, 0.1);
+}
+
+/* Make non-clickable cards look like normal divs */
+.non-clickable {
+    pointer-events: none;  /* Disable clicking */
+    cursor: default;
+}
+
   
   /* Card Title */
   .card-title {

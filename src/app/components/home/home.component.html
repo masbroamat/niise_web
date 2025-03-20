@@ -18,10 +18,15 @@
   
     <!-- Cards Grid -->
     <div class="quick-access-grid">
-      <div class="access-card" *ngFor="let item of quickAccessItems">
+      <a 
+        *ngFor="let item of quickAccessItems" 
+        [routerLink]="item.route ? item.route : null" 
+        class="access-card"
+        [class.non-clickable]="!item.route"
+      >
         <img [src]="item.image" [alt]="item.title" class="card-image" />
         <div class="card-title">{{ item.title }}</div>
-      </div>
+      </a>
     </div>
 </div>
 
