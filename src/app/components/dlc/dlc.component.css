@@ -1,10 +1,14 @@
 .container {
-    min-width: 1440px;
-    margin: 0;
+    width: 100vw; /* Full width */
+    max-width: 100%; /* Ensure it does not exceed the viewport */
+    margin: 0; /* Remove any automatic margins */
+    padding: 0; /* Remove any padding */
+
   }
   
 .container h1 {
-    font-family: 'ramadhara';
+    font-family: 'ramabhadra';
+    font-weight: bold;
   }
   
   .tabs {
@@ -79,7 +83,7 @@
     z-index: 1;
 }
   
-  .info-section {
+  .content .info-section {
     flex: 1;
   }
   
@@ -162,4 +166,13 @@
     font-family: 'Open Sans';
     font-size: 14px;
     margin: 5px 0 0;
+}
+
+.content .white-background{
+  background-color: white;
+  width: 90vw;
+  display: flex;
+  gap: 50px;
+  padding: 30px;
+  margin: 0 auto;
 }
