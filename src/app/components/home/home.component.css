@@ -1,0 +1,37 @@
+.greet-container {
+    display: flex;
+    border: 2px solid;
+    border-color: black;
+    justify-content: space-between;
+    padding: 0px 30px
+}
+
+.greet {
+    display: flex;
+}
+.sun {
+    height: 35px;
+    width: auto;
+}
+
+.profile {
+    height: 35px;
+    width: auto;
+}
+
+.status-container {
+    background-color: #2A6A94;
+    color: white;
+    display: flex;
+    padding: 0px 30px;
+    gap: 10px;
+    
+}
+
+.status-txt {
+    color: #3CDA47;
+}
+
+.quick-access {
+    padding: 0px 30px;
+}

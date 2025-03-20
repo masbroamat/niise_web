@@ -15,14 +15,15 @@
 /* Add margin-top so the background image starts AFTER navbar */
 .background-container {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 200px;
   overflow: hidden;
   margin-top: 60px; /* Adjust based on navbar height */
 }
+
 .background-image {
-  background-image: url("/images/ibu-pejabat-imigresen-malaysia.jpg"), linear-gradient(rgba(0,0,0,0.5),rgba(0,0,0,0.5));
   filter: blur(4px);
+  width: 100%;
 }
   
   .custom-navbar .btn {
