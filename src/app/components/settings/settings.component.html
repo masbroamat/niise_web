@@ -10,16 +10,19 @@
     <!-- Top Navigation Bar -->
     <nav class="topbar">
       <div class="nav-links">
-        <a href="#" routerLink="/home">Home</a>
-        <a href="#" routerLink="/profile">Profile</a>
-        <a href="#" routerLink="/settings" class="active">Settings</a>
+        <a routerLink="/home">Home</a>
+        <a routerLink="/profile">Profile</a>
+        <a routerLink="/settings" class="active">Settings</a>
       </div>
       <div class="date-time" id="datetime"></div>
     </nav>
+    
     <div class="settingname">
       <h1>Settings</h1>
     </div>
+    
     <hr />
+    
     <div class="container">
       <!-- Sidebar -->
       <aside class="sidebar">
@@ -39,21 +42,19 @@
           <h1>Change Password</h1>
           <p class="info-text">
             The password must be at least eight characters long containing at
-            least one uppercase letter, one lowercase letter and one number.
+            least one uppercase letter, one lowercase letter, and one number.
           </p>
 
           <div class="password-form">
             <label>Current Password:</label>
             <div class="input-group">
               <input type="password" id="currentPassword" />
-              <span
-                class="toggle-password"
-                onclick="togglePassword('currentPassword', this)"
-              >
+              <span class="toggle-password" (click)="togglePassword('currentPassword', $event)">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
                   width="20"
                   height="20"
+                  alt="Toggle Password"
                 />
               </span>
             </div>
@@ -61,14 +62,12 @@
             <label>New Password:</label>
             <div class="input-group">
               <input type="password" id="newPassword" />
-              <span
-                class="toggle-password"
-                onclick="togglePassword('newPassword', this)"
-              >
+              <span class="toggle-password" (click)="togglePassword('newPassword', $event)">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
                   width="20"
                   height="20"
+                  alt="Toggle Password"
                 />
               </span>
             </div>
@@ -76,14 +75,12 @@
             <label>Confirm Password:</label>
             <div class="input-group">
               <input type="password" id="confirmPassword" />
-              <span
-                class="toggle-password"
-                onclick="togglePassword('confirmPassword', this)"
-              >
+              <span class="toggle-password" (click)="togglePassword('confirmPassword', $event)">
                 <img
                   src="https://cdn-icons-png.flaticon.com/128/2767/2767146.png"
                   width="20"
                   height="20"
+                  alt="Toggle Password"
                 />
               </span>
             </div>
@@ -94,26 +91,11 @@
             </div>
           </div>
         </section>
-
-        <script>
-          // Function to toggle password visibility
-          function togglePassword(inputId, element) {
-            let inputField = document.getElementById(inputId);
-            let imgElement = element.querySelector("img");
-
-            if (inputField.type === "password") {
-              inputField.type = "text";
-              imgElement.src =
-                "https://cdn-icons-png.flaticon.com/512/709/709612.png"; // Eye open icon
-            } else {
-              inputField.type = "password";
-              imgElement.src =
-                "https://cdn-icons-png.flaticon.com/128/2767/2767146.png"; // Eye closed icon
-            }
-          }
-
-          // Function to update the date and time dynamically
-          function updateDateTime() {
+      </main>
+    </div>
+  </body>
+  <script>
+     function updateDateTime() {
             let now = new Date();
             let options = {
               weekday: "long",
@@ -131,8 +113,5 @@
           // Update date and time every second
           setInterval(updateDateTime, 1000);
           updateDateTime();
-        </script>
-      </main>
-    </div>
-  </body>
+  </script>
 </html>
