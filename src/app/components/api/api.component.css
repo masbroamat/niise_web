@@ -1,0 +1,20 @@
+.row {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+table {
+    border: 2px black solid;
+}
+
+tr,td {
+    border: 1px black solid;
+
+}
+
+img {
+    height: 100px;
+    width: 100px;
+}
+

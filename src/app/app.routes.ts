@@ -1,7 +1,8 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
+import { ApiComponent } from './components/api/api.component';
 import { DlcComponent } from './components/dlc/dlc.component';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
+import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SetNewPasswordComponent } from './components/set-new-password/set-new-password.component';
@@ -60,5 +61,9 @@ export const routes: Routes = [
   {
     path: 'verificationforgotpassword',
     component: VerificationForgotPasswordComponent,
+  },
+  {
+    path: 'api',
+    component: ApiComponent,
   },
 ];
