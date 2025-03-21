@@ -3,10 +3,10 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  templateUrl: './set-new-password.component.html',
+  styleUrls: ['./set-new-password.component.css'],
 })
-export class AppComponent implements AfterViewInit {
+export class SetNewPasswordComponent implements AfterViewInit {
   passwordForm: FormGroup;
 
   @ViewChild('passwordField') passwordField!: ElementRef;
@@ -15,20 +15,20 @@ export class AppComponent implements AfterViewInit {
   constructor(private fb: FormBuilder) {
     this.passwordForm = this.fb.group({
       newPassword: ['', Validators.required],
-      confirmPassword: ['', Validators.required]
+      confirmPassword: ['', Validators.required],
     });
   }
 
   ngAfterViewInit(): void {
-    this.togglePassword.nativeElement.addEventListener("click", () => {
-      if (this.passwordField.nativeElement.type === "password") {
-        this.passwordField.nativeElement.type = "text";
-        this.togglePassword.nativeElement.classList.remove("fa-eye");
-        this.togglePassword.nativeElement.classList.add("fa-eye-slash");
+    this.togglePassword.nativeElement.addEventListener('click', () => {
+      if (this.passwordField.nativeElement.type === 'password') {
+        this.passwordField.nativeElement.type = 'text';
+        this.togglePassword.nativeElement.classList.remove('fa-eye');
+        this.togglePassword.nativeElement.classList.add('fa-eye-slash');
       } else {
-        this.passwordField.nativeElement.type = "password";
-        this.togglePassword.nativeElement.classList.remove("fa-eye-slash");
-        this.togglePassword.nativeElement.classList.add("fa-eye");
+        this.passwordField.nativeElement.type = 'password';
+        this.togglePassword.nativeElement.classList.remove('fa-eye-slash');
+        this.togglePassword.nativeElement.classList.add('fa-eye');
       }
     });
   }
@@ -36,7 +36,9 @@ export class AppComponent implements AfterViewInit {
   checkPasswords() {
     const { newPassword, confirmPassword } = this.passwordForm.value;
     if (newPassword !== confirmPassword) {
-      this.passwordForm.controls['confirmPassword'].setErrors({ mismatch: true });
+      this.passwordForm.controls['confirmPassword'].setErrors({
+        mismatch: true,
+      });
     } else {
       this.passwordForm.controls['confirmPassword'].setErrors(null);
     }

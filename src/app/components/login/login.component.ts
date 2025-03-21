@@ -1,27 +1,28 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, ReactiveFormsModule],
+  imports: [CommonModule, ReactiveFormsModule, RouterLink],
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   loginForm: FormGroup;
-  selectedTab: string = 'malaysian'; 
+  selectedTab: string = 'malaysian';
 
   constructor(private fb: FormBuilder) {
     this.loginForm = this.fb.group({
       ic: [''],
-      password: ['']
+      password: [''],
     });
   }
 
   setTab(tab: string) {
-    this.selectedTab = tab; 
+    this.selectedTab = tab;
   }
 
   login() {

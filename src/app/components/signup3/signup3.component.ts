@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-signup3',
-  imports: [RouterLink],
   templateUrl: './signup3.component.html',
-  styleUrl: './signup3.component.css',
+  styleUrls: ['./signup3.component.css'],
 })
-export class Signup3Component {}
-personalDetailForm: FormGroup;
+export class Signup3Component {
+  personalDetailForm: FormGroup;
 
   constructor(private fb: FormBuilder) {
     this.personalDetailForm = this.fb.group({
