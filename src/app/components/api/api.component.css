@@ -1,20 +1,23 @@
-.row {
-    display: flex;
+* { 
+    text-align: center;    
     justify-content: center;
-    margin: 0 auto;
+}
+.row {
+    /* display: flex; */
+    /* justify-content: center; */
+    /* margin: 0 auto; */
 }
 
-table {
+table,th {
     border: 2px black solid;
+    text-align: center;
+    width: 500px;
 }
+
 
 tr,td {
     border: 1px black solid;
 
 }
 
-img {
-    height: 100px;
-    width: 100px;
-}
 
